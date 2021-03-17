@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Place</title>
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     <style>
+
+        html{
+            height: 100vh;
+        }
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            height: 100%;
+        } 
+
+        main{
+            padding-left: 300px;
+        }
+         
+        @media only screen and (max-width : 992px) {
+            main {
+                padding-left: 0;
+            }
+        }
+
+        h1{
+            font-size: 2em;
+        }
+
+     </style>
+</head>
+<body>
+    
+    <nav>
+        <div class="nav-wrapper green"></div>
+    </nav>
+    <ul id="slide-out" class="sidenav sidenav-fixed">
+        <nav>
+            <div class="nav-wrapper green">
+                <a href="#" style="margin-left: 10px" class="brand-logo green left">Laptop Place</a>
+            </div>
+        </nav>
+        <section class="container">
+
+            <div class="row">
+                <h1>Filters: </h1>
+            </div>
+
+            <div class="row">
+                <button id="nvidia-btn" onclick="filterGPU('NVIDIA')" class="col s10 offset-s1 btn waves-effect waves-light" >
+                    NVIDIA GPUs Only
+                </button>
+            </div>
+
+            <div class="row">
+                <button id="amd-btn" onclick="filterGPU('AMD')" class="col s10 offset-s1 btn waves-effect waves-light" >
+                    AMD GPUs Only
+                </button>
+            </div>
+
+            <div class="row">
+                <button id="intel-btn" onclick="filterGPU('Intel')" class="col s10 offset-s1 btn waves-effect waves-light" >
+                    Intel GPUs Only
+                </button>
+            </div>
+
+            <div class="row">
+                <button id="none-btn" onclick="drawTable(data)" class="col s10 offset-s1 btn waves-effect waves-light" >
+                   None
+                </button>
+            </div>
+
+            
+            <div class="row">
+                <h1>Results: <span id="count"></span></h1>
+            </div>
+              
+
+        </section>
+    </ul>
+    <main class="row">
+ 
+        <article class="col s12">
+            <table class="responsive-table">
+                <thead>
+                  <tr>
+                      <th>Name</th>
+                      <th>Brand</th>
+                      <th>GPU Brand</th>
+                      <th>CPU Brand</th>
+                      <th>Price</th>
+                  </tr>
+                </thead>
+        
+                <tbody id="result">
+
+                </tbody>
+              </table>
+        </article>
+    </main>
+    
+</body>
+    <script src="laptops.js"></script>
+
+    <script>
+
+        //data global variable contains laptop records 
+        console.log(data.length);
+
+        //creates a new array called filtered containing only the laptops of the specified brand then sends it to draw table
+        //ths function is called with a different brand depending on the button clicked
+        function filterGPU(brand){
+            const filtered = [];
+
+            //your code
+
+            drawTable(filtered);
+        }
+
+        //renders table rows based on the records given
+        //example_record = {
+        //      "brand":"HP",
+        //      "name":"Notebook 14-df0008nx",
+        //      "processor_type":"Intel Celeron N4000",
+        //      "display_size":14,
+        //      "disk_space":"64 GB (eMMC)",
+        //      "price":1259,
+        //      "graphics_card":"Intel HD Graphics 600",
+        //      "graphics_brand":"Intel",
+        //      "processor_brand":"Intel",
+        //      "rating":0
+        //   }
+        function drawTable(records){
+            let html = "";
+
+            //your code
+        }
+
+        //renders a count of the table rows in the span element with id count
+        function showCount(records){
+            // your code
+        }
+
+        drawTable(data);
+        showCount(data);
+
+    </script>
+</html>
