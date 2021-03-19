@@ -54,38 +54,37 @@
         <section class="container">
 
             <div class="row">
-                <h1>Filters: </h1>
+                <h1>Sort: </h1>
             </div>
 
             <div class="row">
-                <button id="nvidia-btn" onclick="filterGPU('NVIDIA')" class="col s10 offset-s1 btn waves-effect waves-light" >
-                    NVIDIA GPUs Only
+                <button id="name-btn" onclick="sortBy('name')" class="col s10 offset-s1 btn waves-effect waves-light" >
+                    Sort By Name
                 </button>
             </div>
 
             <div class="row">
-                <button id="amd-btn" onclick="filterGPU('AMD')" class="col s10 offset-s1 btn waves-effect waves-light" >
-                    AMD GPUs Only
+                <button id="cpu-btn" onclick="sortBy('processor_brand')" class="col s10 offset-s1 btn waves-effect waves-light" >
+                    Sort By CPU
                 </button>
             </div>
 
             <div class="row">
-                <button id="intel-btn" onclick="filterGPU('Intel')" class="col s10 offset-s1 btn waves-effect waves-light" >
-                    Intel GPUs Only
+                <button id="gpu-btn" onclick="sortBy('graphics_brand')" class="col s10 offset-s1 btn waves-effect waves-light" >
+                    Sort By GPU
                 </button>
             </div>
 
             <div class="row">
-                <button id="none-btn" onclick="drawTable(data)" class="col s10 offset-s1 btn waves-effect waves-light" >
-                   None
+                <button id="price-btn" onclick="sortBy('price')" class="col s10 offset-s1 btn waves-effect waves-light" >
+                    Sort By Price
                 </button>
             </div>
 
-            
             <div class="row">
-                <h1>Results: <span id="count"></span></h1>
+                <h1>Sorted by: <span id="sort_key">None</span></h1>
             </div>
-              
+
 
         </section>
     </ul>
@@ -118,42 +117,44 @@
         //data global variable contains laptop records 
         console.log(data.length);
 
-        //creates a new array called filtered containing only the laptops of the specified brand then sends it to draw table
-        //ths function is called with a different brand depending on the button clicked
-        function filterGPU(brand){
-            const filtered = [];
+        function nameCompare(a, b){
 
-            //your code
+        }
 
-            drawTable(filtered);
+        function cpuCompare(a, b){
+
+        }
+
+        function gpuCompare(a, b){
+
+        }
+
+
+        function sortBy(key){
+            
+
+            drawTable(data);
         }
 
         //renders table rows based on the records given
-        //example_record = {
-        //      "brand":"HP",
-        //      "name":"Notebook 14-df0008nx",
-        //      "processor_type":"Intel Celeron N4000",
-        //      "display_size":14,
-        //      "disk_space":"64 GB (eMMC)",
-        //      "price":1259,
-        //      "graphics_card":"Intel HD Graphics 600",
-        //      "graphics_brand":"Intel",
-        //      "processor_brand":"Intel",
-        //      "rating":0
-        //   }
+        //example_record =   {
+        //     "brand": "HP",
+        //     "name": "Notebook 14-df0008nx",
+        //     "processor_type": "Intel Celeron N4000",
+        //     "display_size": 14,
+        //     "disk_space": "64 GB (eMMC)",
+        //     "price": 1259,
+        //     "graphics_card": "Intel HD Graphics 600",
+        //     "graphics_brand": "Intel",
+        //     "processor_brand": "Intel",
+        //     "rating": 0
+        // }
         function drawTable(records){
-            let html = "";
-
             //your code
         }
 
-        //renders a count of the table rows in the span element with id count
-        function showCount(records){
-            // your code
-        }
-
         drawTable(data);
-        showCount(data);
+
 
     </script>
 </html>
