@@ -4,7 +4,7 @@
   "description": "",
   "main": "laptops.js",
   "scripts": {
-    "test": "mocha | tee report.txt; exit 0",
+    "test": "mocha",
     "start": "live-server --port=8080 --cors"
   },
   "author": "",
